@@ -12,7 +12,7 @@ let speedY = 3;
 let hit = false
 
 function preload(){
-  wallpaper = loadImage('Background');
+  wallpaper = loadImage('Background.png');
 }
 
 function setup() {
