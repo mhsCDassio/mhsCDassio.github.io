@@ -12,7 +12,7 @@ let speedY = 3;
 let hit = false
 
 function preload(){
-  wallpaper = loadImage('Background 1');
+  wallpaper = loadImage('Background');
 }
 
 function setup() {
@@ -22,7 +22,7 @@ function setup() {
 }
 
 function draw() {
-  //wallpaper;
+  wallpaper;
   background(0)
   fill(255);
   ellipse(x1,y1,30,30);
