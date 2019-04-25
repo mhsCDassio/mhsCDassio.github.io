@@ -17,12 +17,11 @@ function preload(){
 
 function setup() {
   // put setup code here
-  wallpaper;
-  //createCanvas(1280,800)
+  createCanvas(1280,800)
 }
 
 function draw() {
-  wallpaper;
+  image(wallpaper,0,0);
   background(0)
   fill(255);
   ellipse(x1,y1,30,30);
