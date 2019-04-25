@@ -22,7 +22,7 @@ function setup() {
 
 function draw() {
   image(wallpaper,0,0);
-  background(0)
+  //background(0)
   fill(255);
   ellipse(x1,y1,30,30);
   x1+=speedX;
