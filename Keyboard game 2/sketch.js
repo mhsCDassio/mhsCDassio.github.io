@@ -1,6 +1,5 @@
 //Global Variables
 let wallpaper;
-let mySound;
 
 let x1 = 100;
 let y1 = 100;
@@ -14,7 +13,6 @@ let hit = false
 
 function preload(){
   wallpaper = loadImage('Background.png');
-  mySound = loadSound('Fail.mp3')
 }
 
 function setup() {
@@ -51,7 +49,6 @@ function draw() {
     speedY=speedY*(-1);
   }
   if (y1>=height){
-    mySound.play()
     background(255,0,0)
     textSize(60)
     fill(255)
@@ -59,7 +56,6 @@ function draw() {
     textSize(30)
     fill(255)
     text('to continue press space bar',width/3+10,height/2 + 50)
-    mySound.stop()
   }
   if (keyIsDown(32)){
     x1=100
