@@ -23,7 +23,7 @@ function setup() {
 function draw() {
   image(wallpaper,0,0);
   //background(0)
-  fill(255);
+  fill(0);
   ellipse(x1,y1,30,30);
   x1+=speedX;
   y1+=speedY;
@@ -34,7 +34,7 @@ function draw() {
     speedX=speedX*(-1);
   }
 
-  fill(255)
+  fill(0)
   noStroke()
   rect(x2,y2,200,20)
   if (keyIsDown(LEFT_ARROW)){
