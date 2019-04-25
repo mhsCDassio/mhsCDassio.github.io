@@ -1,5 +1,6 @@
 //Global Variables
 let wallpaper;
+let mySound;
 
 let x1 = 100;
 let y1 = 100;
@@ -13,6 +14,7 @@ let hit = false
 
 function preload(){
   wallpaper = loadImage('Background.png');
+  mySound = loadSound('Fail.mp3')
 }
 
 function setup() {
@@ -22,7 +24,6 @@ function setup() {
 
 function draw() {
   image(wallpaper,0,0);
-  //background(0)
   fill(230);
   ellipse(x1,y1,30,30);
   x1+=speedX;
@@ -50,6 +51,7 @@ function draw() {
     speedY=speedY*(-1);
   }
   if (y1>=height){
+    mySound.play()
     background(255,0,0)
     textSize(60)
     fill(255)
