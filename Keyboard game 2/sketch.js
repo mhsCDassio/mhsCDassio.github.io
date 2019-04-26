@@ -44,8 +44,8 @@ function draw() {
   }
   hit = collideRectCircle(x2,y2,200,20,x1,y1,30);
   if (hit){
-    speedY+=0.5
-    speedX+=0.5
+    speedY+=random(0,1);
+    speedX+=random(0,1);
     speedY=speedY*(-1);
   }
   if (y1>=height){
