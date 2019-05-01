@@ -115,4 +115,5 @@ function draw() {
     x = 640
     y = 400
     level = 2
+  }
 }
