@@ -1,70 +1,108 @@
-let x = 100
+let x = 640
 let y = 400
 let y1 = 0
 let y2 = 400
-let y3 = 300
-let y4 = 100
 
 let ySpeed1 = 2
 let ySpeed2 = -2
-let ySpeed3 = 1.9
-let ySpeed4 = 3
 
 let hit1 = false
 let hit2 = false
-let hit3 = false
-let hit4 = false
 
-let lvl2 = false
+let level = 0
 
 function setup() {
   createCanvas(1280,800)
 }
 
 function draw() {
-  background(240)
-  fill(0,255,0)
-  ellipse(x,y,25,25)
-  if (keyIsDown(LEFT_ARROW)){
-    x -= 5
+  if (level === 0){
+    background(0)
+    fill(255)
+    textAlign(CENTER,CENTER)
+    textSize(32)
+    text('ESCAPE ROOM',width/2,height/2)
+    
+    textSize(16)
+    text('You are being held prisoner in this room. \nTo escape you have to move off the screen',width/2,height/2+50)
+    text('Press enter to start playing', width/2, height/2+100)
+    
+    if (keyIsDown(ENTER)){
+      level+=1
+    }
   }
-  if (keyIsDown(RIGHT_ARROW)){
-    x += 5
+  
+  else if (level === 1){
+    background(240)
+    fill(0,255,0)
+    ellipse(x,y,25,25)
+    if (keyIsDown(LEFT_ARROW)){
+      x -= 5
+    }
+    if (keyIsDown(RIGHT_ARROW)){
+      x += 5
+    }
+    if (keyIsDown(UP_ARROW)){
+      y -= 5
+    }
+    if (keyIsDown(DOWN_ARROW)){
+      y += 5
+    }
+   
+    if (x>width || x<0 || y>height || y<0){
+      level+=1
+    }
   }
-  if (keyIsDown(UP_ARROW)){
-    y -= 5
+  
+  else if (level === 2){
+    x=640
+    y=400
+    fill(0)
+    y1+=ySpeed1
+    rect(400,y1,50,50)
+    if (x>width || x<0 || y>height || y<0){
+      level+=1
+    }
+    if(y1+50>=800 || y1<=0){
+     ySpeed1 = ySpeed1*(-1)
+   }
   }
-  if (keyIsDown(DOWN_ARROW)){
-    y += 5
+  else if (level === 3){
+    x=640
+    y=400
+    fill(0)
+    y1+=ySpeed1
+    y2+=ySpeed2
+    rect(400,y1,50,50)
+    rect(550,y2,50,50)
+    if (x>width || x<0 || y>height || y<0){
+      level+=1
+    }
+    if(y1+50>=800 || y1<=0){
+      ySpeed1 = ySpeed1*(-1)
+    }
+    if(y2+50>=800 || y2<=0){
+      ySpeed2 = ySpeed2*(-1)
+    }
+   }
+  else if (level === 4){
+    background(0,255,0)
+    fill(255)
+    textAlign(CENTER, CENTER);
+    textSize(32);
+    text('YOU WIN!', width/2, height/2);
+    textSize(16);
+    text('Press enter to play again', width/2, height/2+50);
+    
+    if (keyIsDown(ENTER)) {
+      x=width/2;
+      y=height/2;
+      level=2;
+    }
   }
-  fill(0)
-  y1+=ySpeed1
-  y2+=ySpeed2
-  y3+=ySpeed3
-  y4+=ySpeed4
-
-  rect(400,y1,20,400)
-  rect(550,y2,20,350)
-  rect(700,y3,20,200)
-  rect(860,y4,20,500)
-
-  if(y1+400>=800 || y1<=0){
-    ySpeed1 = ySpeed1*(-1)
-  }
-  if(y2+350>=800 || y2<=0){
-    ySpeed2 = ySpeed2*(-1)
-  }
-  if(y3+200>=800 || y3<=0){
-    ySpeed3 = ySpeed3*(-1)
-  }
-  if(y4+500>=800 || y4<=0){
-    ySpeed4 = ySpeed4*(-1)
-  }
-  hit1 = collideRectCircle(400,y1,20,400,x,y,25)
-  hit2 = collideRectCircle(550,y2,20,350,x,y,25)
-  hit3 = collideRectCircle(700,y3,20,200,x,y,25)
-  hit4 = collideRectCircle(860,y4,20,500,x,y,25)
-  if(hit1||hit2||hit3||hit4){
+  hit1 = collideRectCircle(400,y1,50,50,x,y,25)
+  hit2 = collideRectCircle(550,y2,50,50,x,y,25)
+  if(hit1||hit2){
     background(255,0,0)
     textSize(60)
     fill(255)
@@ -74,26 +112,7 @@ function draw() {
     text('to continue press space bar',width/3+10,height/2 + 50)
   }
   if (keyIsDown(32)){
-    x = 100
+    x = 640
     y = 400
-  }
-  if (x>=900){
-    background(240)
-    textSize(40)
-    text('Press Tab for Lvl 2',width/3+10,height/2 + 50)
-  }
-  if (keyIsDown(13)){
-    lvl2 = true
-    x=100
-    y=400
-  }
-  if(lvl2){
-    fill(0,240,0)
-    textSize(12)
-    text('lvl 2',10,10)
-    ySpeed1 = ySpeed1 + 5
-    ySpeed2-=2
-    ySpeed3+=2
-    ySpeed4+=1.5
-  }
+    level = 2
 }
