@@ -55,6 +55,7 @@ function draw() {
   }
   
   else if (level === 2){
+    background(240)
     x=640
     y=400
     fill(0)
@@ -68,6 +69,7 @@ function draw() {
    }
   }
   else if (level === 3){
+    background(240)
     x=640
     y=400
     fill(0)
