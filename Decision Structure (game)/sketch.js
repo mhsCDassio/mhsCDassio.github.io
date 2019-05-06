@@ -136,7 +136,7 @@ function draw() {
     if (x2+100>=1280 || x2<=0){
       xSpeed2 = xSpeed2*(-1)
     }
-    
+
     if (x>width || x<0 || y>height || y<0){
       level+=1
     }
