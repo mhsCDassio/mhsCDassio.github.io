@@ -25,12 +25,12 @@ function draw() {
     background(0)
     fill(255)
     textAlign(CENTER,CENTER)
-    textSize(32)
+    textSize(40)
     text('ESCAPE ROOM',width/2,height/2)
 
-    textSize(16)
-    text('You are being held prisoner in this room. \nTo escape you have to move off the screen',width/2,height/2+50)
-    text('Press enter to start playing', width/2, height/2+100)
+    textSize(25)
+    text('You are being held prisoner in this room. \nTo escape you have to move off the screen',width/2,height/2+70)
+    text('Press enter to start playing', width/2, height/2+150)
 
     if (keyIsDown(ENTER)){
       level+=1
