@@ -3,7 +3,7 @@ let y = 400
 let x1 = 300
 let x2 = 800
 let y1 = 0
-let y2 = 300
+let y2 = 0
 
 let ySpeed1 = 5
 let ySpeed2 = 5
@@ -178,7 +178,7 @@ function draw() {
     x1 = 300
     x2 = 800
     y1 = 0
-    y2 = 300
+    y2 = 0
     level = 2
     xSpeed1 = -5
     xSpeed2 = 5
