@@ -28,17 +28,19 @@ function setup(){
 
 //Start Program
 function draw(){
-  let x = 2*width/5 + 80
-  let y = 2*height/5 + 100
-  rotate(PI/20)
+  //Clara's Code
+  let x = 2*width/5 + 80;
+  let y = 2*height/5 + 100;
+  rotate(PI/20);
   drawArms(x,y);
-  rotate(-PI/20)
-  x = 3*width/5 - 90
-  y = 3*height/5 + 50
-  rotate(-PI/20)
-  drawArms(x,y)
-  rotate(PI/20)
-
+  rotate(-PI/20);
+  x = 3*width/5 - 90;
+  y = 3*height/5 + 50;
+  rotate(-PI/20);
+  drawArms(x,y);
+  rotate(PI/20);
+  //Clara's Code end
+  
   drawFace();
   x = width/3
   y = height/3

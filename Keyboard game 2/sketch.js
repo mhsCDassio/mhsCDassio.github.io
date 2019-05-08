@@ -1,3 +1,9 @@
+/*
+Keyboard game 2/Sounds and images
+Created by Clara
+April 25, 2019
+*/
+
 //Global Variables
 let wallpaper;
 
@@ -9,15 +15,14 @@ let y2 = 700;
 let speedX = 3;
 let speedY = 3;
 
-let hit = false
+let hit = false;
 
 function preload(){
   wallpaper = loadImage('Background.png');
 }
 
 function setup() {
-  // put setup code here
-  createCanvas(1280,800)
+  createCanvas(1280,800);
 }
 
 function draw() {
@@ -33,36 +38,36 @@ function draw() {
     speedX=speedX*(-1);
   }
 
-  fill(18, 56, 206)
-  noStroke()
-  rect(x2,y2,200,20)
+  fill(18, 56, 206);
+  noStroke();
+  rect(x2,y2,200,20);
   if (keyIsDown(LEFT_ARROW)){
-    x2 -= 10
+    x2 -= 10;
   }
   if (keyIsDown(RIGHT_ARROW)){
-    x2 += 10
+    x2 += 10;
   }
   hit = collideRectCircle(x2,y2,200,20,x1,y1,30);
   if (hit){
     speedY+=random(0,1);
     speedX+=random(0,1);
-    speedY=speedY*(-1);
+    speedY=speedY*(-1);;
   }
   if (y1>=height){
-    background(255,0,0)
-    textSize(60)
-    fill(255)
-    text('YOU FAIL',width/5*2-20,height/2)
-    textSize(30)
-    fill(255)
-    text('to continue press space bar',width/3+10,height/2 + 50)
+    background(255,0,0);
+    textSize(60);
+    fill(255);
+    text('YOU FAIL',width/5*2-20,height/2);
+    textSize(30);
+    fill(255);
+    text('to continue press space bar',width/3+10,height/2 + 50);
   }
   if (keyIsDown(32)){
-    x1=100
-    y1=100
-    x2=400
-    y2=700
-    speedX=3
-    speedY=3
+    x1=100;
+    y1=100;
+    x2=400;
+    y2=700;
+    speedX=3;
+    speedY=3;
   }
 }
