@@ -1,3 +1,4 @@
+//Global Variables
 let x1 = 700
 let y1 = 600
 let x2 = 100
@@ -15,6 +16,7 @@ function draw() {
   background(240)
   hit = collideCircleCircle(x1,y1,size,x2,y2,size)
   fill(66, 244, 200)
+  //ellipse that can be moved with the arrows
   ellipse(x1,y1,size,size)
 
   if (keyIsDown(LEFT_ARROW)){
@@ -29,6 +31,7 @@ function draw() {
   if (keyIsDown(DOWN_ARROW)){
     y1 += 5
   }
+  //if the ellipse leaves the canvas it will re-appear on the opposite side
   if (x1===0){
     x1 = 800
   }
@@ -42,6 +45,7 @@ function draw() {
     y1 = 0
   }
 
+  //second ellipse that can be moved with A,S,W,D
   fill(125, 66, 244)
   ellipse(x2,y2,size,size)
 
@@ -69,6 +73,7 @@ function draw() {
   else if (y2===800){
     y2 = 0
   }
+  //if the ellipses meet a fail screen will show and let the players reset the place of the ellipses
   if (hit){
     background(0)
     textSize(60)
