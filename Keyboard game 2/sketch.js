@@ -28,6 +28,7 @@ function setup() {
 function draw() {
   image(wallpaper,0,0);
   fill(18, 56, 206);
+  //ellipse will move over the screen and cannt colide with the botom of the canvas(referr to if(hit)), if it hits any other side it will change it's direction
   ellipse(x1,y1,30,30);
   x1+=speedX;
   y1+=speedY;
@@ -40,6 +41,7 @@ function draw() {
 
   fill(18, 56, 206);
   noStroke();
+  //small rectangle than can be moved to keep the ellipse from hitting the botom of the canvas, when ellipse hits the rectangle it will change y direction
   rect(x2,y2,200,20);
   if (keyIsDown(LEFT_ARROW)){
     x2 -= 10;
