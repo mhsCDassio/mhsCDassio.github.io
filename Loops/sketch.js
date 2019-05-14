@@ -13,7 +13,7 @@ function draw() {
   noStroke();
   let y = 255;
   let x = 0;
-
+//draws differently coloured bars from top to bottom of the canvas, the colour being a darker blue every time you go downwards
   for(x=0; x<=height; x+=50){
     y-=20;
     fill(0,y,200);
